@@ -1,0 +1,52 @@
+@layout('layout.app')
+@section('content')
+@set('title', 'Sign Up')
+<section class="hero is-success is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title">Sign Up</h3>
+        <p class="subtitle">Sign up before using the app</p>
+        <div class="box">
+          <figure class="avatar">
+            <img src="https://placehold.it/128x128">
+          </figure>
+          <form action="/create" method="POST">
+            <div class="field">
+              <div class="control">
+                <label for="" class="label is-medium">Username</label>
+                <input class="input is-large" type="text" placeholder="Your Username" autofocus="">
+              </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label for="" class="label is-medium">Email</label>
+                  <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                </div>
+              </div>
+
+            <div class="field">
+              <div class="control">
+                  <label for="" class="label is-medium">Password</label>
+                <input class="input is-large" type="password" placeholder="Your Password">
+              </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <label for="" class="label is-medium">Confirm</label>
+                  <input class="input is-large" type="password" placeholder="Confirm Password">
+                </div>
+              </div>
+            <button type="submit" class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+          </form>
+        </div>
+        <p class="">
+          <a href="../">Login</a> &nbsp;·&nbsp;
+          <a href="../">Need Help?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+@endsection

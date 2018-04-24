@@ -1,5 +1,3 @@
-
-
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -15,4 +13,7 @@
 
 const Route = use('Route');
 
-Route.on('/').render('welcome');
+Route.on('/').render('static.index');
+Route.get('login', 'SessionController.login');
+Route.get('signup', 'UserController.signUp');
+Route.post('signup', 'UserController.create');

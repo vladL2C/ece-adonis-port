@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.navbar.is-info {
+  background-color: #37475f;
+}
+
+div.hero-body {
+  background-color: #5997bf;
+}
+
+.login {
+  color: white;
+}
+
+body {
+  background-color: #e2f4ff;
+}
+
+.columns {
+  margin-top: 20px;
+}
+
+.navbar-menu.is-active {
+  animation: fade-in 0.3s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
