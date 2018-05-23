@@ -16,14 +16,16 @@
             <div class="field">
               <div class="control">
                 <label for="" class="label is-medium">Username</label>
-                <input name="username" class="input is-large" type="text" placeholder="Your Username" autofocus="">
+                <input value="{{old('username', '')}}" name="username" class="input is-large" type="text" placeholder="Your Username" autofocus="">
+                {{ elIf('<span>$self</span>', getErrorFor('username'), hasErrorFor('username')) }}
               </div>
             </div>
 
             <div class="field">
               <div class="control">
                 <label for="" class="label is-medium">Email</label>
-                <input name="email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                <input value="{{old('email', '')}}" name="email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                {{ elIf('<span>$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
               </div>
             </div>
 
@@ -31,12 +33,14 @@
               <div class="control">
                 <label for="" class="label is-medium">Password</label>
                 <input name="password" class="input is-large" type="password" placeholder="Your Password">
+                {{ elIf('<span>$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
               </div>
             </div>
             <div class="field">
               <div class="control">
                 <label for="" class="label is-medium">Confirm</label>
                 <input name="password_confirmation" class="input is-large" type="password" placeholder="Confirm Password">
+                {{ elIf('<span>$self</span>', getErrorFor('password_confirmation'), hasErrorFor('password_confirmation')) }}
               </div>
             </div>
             <button type="submit" class="button is-block is-info is-large is-fullwidth">Sign Up</button>

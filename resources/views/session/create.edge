@@ -5,22 +5,29 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="column is-4 is-offset-4">
+        @if(flashMessage('error'))
+          <div class="notification is-danger">
+            <button class="delete"></button>
+            {{ flashMessage('error') }}
+          </div>
+        @endif
         <h3 class="title">Login</h3>
         <p class="subtitle">Please login to proceed.</p>
         <div class="box">
           <figure class="avatar">
             <img src="https://placehold.it/128x128">
           </figure>
-          <form>
+          <form action="/login" method="POST">
+            {{ csrfField() }}
             <div class="field">
               <div class="control">
-                <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                <input name="email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input is-large" type="password" placeholder="Your Password">
+                <input name="password" class="input is-large" type="password" placeholder="Your Password">
               </div>
             </div>
             <div class="field">
@@ -29,7 +36,7 @@
                 Remember me
               </label>
             </div>
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            <button type="submit" class="button is-block is-info is-large is-fullwidth">Login</button>
           </form>
         </div>
         <p class="">

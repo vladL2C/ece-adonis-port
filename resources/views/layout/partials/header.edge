@@ -11,10 +11,16 @@
     </div>
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-end">
+        @loggedIn
+        <a href="/App" class="navbar-item">App</a>
+        <a href="/logout" class="navbar-item">Logout</a>
+        <a href="#" class="navbar-item">Contact</a>
+        @else 
         <a href="/signup" class="navbar-item">Sign Up</a>
         <a href="/login" class="navbar-item">Login</a>
         <a href="#" class="navbar-item">Contact</a>
         <a href="#" class="navbar-item">About</a>
+        @endloggedIn
       </div>  
     </div>
 </nav>

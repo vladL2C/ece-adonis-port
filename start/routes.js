@@ -15,5 +15,7 @@ const Route = use('Route');
 
 Route.on('/').render('static.index');
 Route.get('login', 'SessionController.login');
+Route.get('logout', 'SessionController.logout');
+Route.post('login', 'SessionController.create');
 Route.get('signup', 'UserController.signUp');
 Route.post('signup', 'UserController.create');

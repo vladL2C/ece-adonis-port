@@ -8,13 +8,14 @@ class UserController {
     return view.render('user.signup');
   }
 
-  async create({ response, request }) {
+  async create({ session, response, request }) {
     const data = request.only([
       'username',
       'email',
       'password',
       'password_confirmation'
     ]);
+
     const rules = {
       username: 'required|unique:users',
       email: 'required|email|unique:users',
@@ -24,7 +25,14 @@ class UserController {
 
     const validation = await validateAll(data, rules);
 
+    if (validation.fails()) {
+      session.withErrors(validation.messages()).flashExcept(['password']);
+      return response.redirect('back');
+    }
 
+    delete data.password_confirmation;
+    await User.create(data);
+    return response.redirect('/');
   }
 }
 
