@@ -7,19 +7,21 @@ class SessionController {
     const data = request.only(['email', 'password']);
 
     try {
-      await auth.check();
-      return response.redirect('/');
-    } catch (error) {}
-
-    try {
       await auth.remember(true).attempt(data.email, data.password);
     } catch (e) {
       session.flashExcept(['password']);
       session.flash({
         error: 'We cannot find any account with these credentials.'
       });
+
       return response.redirect('login');
     }
+    const user = auth.user;
+    const token = await auth.authenticator('jwt').generate(user);
+    //TODO: JWT TOKENS DO NOT NEED TO BE STORED IN THE DB
+    //AS THE PAYLOAD Lets the DB know who the user is this is how the api calls are made
+    // and the user is authenticated!!!
+    console.log(token);
     return response.redirect('/');
   }
 

@@ -15,8 +15,7 @@ const globalMiddleware = [
   'Adonis/Middleware/BodyParser',
   'Adonis/Middleware/Session',
   'Adonis/Middleware/Shield',
-  'Adonis/Middleware/AuthInit',
-  'App/Middleware/UserNotAuthenticated'
+  'Adonis/Middleware/AuthInit'
 ];
 
 /*
@@ -38,7 +37,7 @@ const globalMiddleware = [
 */
 const namedMiddleware = {
   auth: 'Adonis/Middleware/Auth',
-  guestUser: 'App/Middleware/UserNotAuthenticated'
+  guest: 'App/Middleware/UserAuthenticated'
 };
 
 /*

@@ -33,9 +33,6 @@ body {
   animation: fade-in 0.3s ease-in forwards;
 }
 
-@media screen and (min-width: 2000px) {
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
