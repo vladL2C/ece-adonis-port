@@ -4,8 +4,7 @@ class SessionController {
   }
 
   async create({ session, auth, request, response }) {
-    const data = request.only(['email', 'password']);
-
+    const data = request.only(['email', 'password', 'checkbox']);
     try {
       await auth.remember(true).attempt(data.email, data.password);
     } catch (e) {
