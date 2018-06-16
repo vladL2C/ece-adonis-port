@@ -3,7 +3,7 @@
 class AuthUser {
   async handle({ request }, next) {
     // call next to advance the request
-    console.log('hello');
+    //auth stuff before each request :D
     await next();
   }
 }
