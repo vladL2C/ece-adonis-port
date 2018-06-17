@@ -12,6 +12,7 @@
 */
 
 const Route = use('Route');
+const Helpers = use('Helpers');
 
 Route.on('/').render('static.index');
 
@@ -23,3 +24,8 @@ Route.group(() => {
 }).middleware(['guest']);
 
 Route.get('logout', 'SessionController.logout');
+
+Route.any('*', ({response}) => {
+  const pathToDist = Helpers.publicPath('/ece-app/dist/index.html');
+  return response.download(pathToDist);
+});
