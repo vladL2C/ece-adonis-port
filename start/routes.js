@@ -25,6 +25,11 @@ Route.group(() => {
 
 Route.get('logout', 'SessionController.logout');
 
+Route.get('/app', ({response}) => {
+  const pathToDist = Helpers.publicPath('/ece-app/dist/index.html');
+  return response.download(pathToDist);
+});
+
 Route.any('*', ({response}) => {
   const pathToDist = Helpers.publicPath('/ece-app/dist/index.html');
   return response.download(pathToDist);
