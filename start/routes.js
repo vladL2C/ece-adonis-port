@@ -13,6 +13,8 @@
 
 const Route = use('Route');
 
+Route.on('/').render('static.index');
+
 Route.group(() => {
   Route.get('login', 'SessionController.login');
   Route.post('login', 'SessionController.create');
@@ -20,5 +22,4 @@ Route.group(() => {
   Route.post('signup', 'UserController.create');
 }).middleware(['guest']);
 
-Route.on('/').render('static.index');
 Route.get('logout', 'SessionController.logout');
